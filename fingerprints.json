@@ -1,0 +1,235 @@
+[
+  {
+    "name": "Heroku",
+    "cname": ["herokuapp.com", "herokudns.com"],
+    "fingerprints": [
+      "No such app",
+      "There is no app configured at that hostname."
+    ]
+  },
+  {
+    "name": "GitHub Pages",
+    "cname": ["github.io"],
+    "fingerprints": [
+      "There isn't a GitHub Pages site here."
+    ]
+  },
+  {
+    "name": "GitLab Pages",
+    "cname": ["gitlab.io"],
+    "fingerprints": [
+      "The page you were looking for could not be found.",
+      "The page you're looking for doesn't exist."
+    ]
+  },
+  {
+    "name": "Fastly",
+    "cname": ["fastly.net", "fastlylb.net"],
+    "fingerprints": [
+      "Fastly error: unknown domain"
+    ]
+  },
+  {
+    "name": "Amazon CloudFront",
+    "cname": ["cloudfront.net"],
+    "fingerprints": [
+      "The request could not be satisfied"
+    ]
+  },
+  {
+    "name": "Amazon S3 (static website)",
+    "cname": ["s3.amazonaws.com", "s3-website", "s3-website-"],
+    "fingerprints": [
+      "NoSuchBucket",
+      "The specified bucket does not exist"
+    ]
+  },
+  {
+    "name": "Netlify",
+    "cname": ["netlify.app", "netlify.com"],
+    "fingerprints": [
+      "Page Not Found",
+      "Site Not Found",
+      "No such site"
+    ]
+  },
+  {
+    "name": "Vercel",
+    "cname": ["vercel.app", "now.sh", "edgesuite.net"],
+    "fingerprints": [
+      "DEPLOYMENT_NOT_FOUND",
+      "The deployment could not be found",
+      "NOT_FOUND"
+    ]
+  },
+  {
+    "name": "GoHire",
+    "cname": ["gohire.io", "hire.withgoogle.com"],
+    "fingerprints": [
+      "Page not found"
+    ]
+  },
+  {
+    "name": "Surge.sh",
+    "cname": ["surge.sh", "surge.surge.sh"],
+    "fingerprints": [
+      "project not found",
+      "repository not found",
+      "Surge.sh: project not found",
+      "Surge.sh - project not found"
+    ],
+    "note": "Surge.sh uses region-specific subdomains; contains check should work for *.surge.sh"
+  },
+  {
+    "name": "Readme.io",
+    "cname": ["readme.io"],
+    "fingerprints": [
+      "Project not found",
+      "No such project"
+    ]
+  },
+  {
+    "name": "Read the Docs",
+    "cname": ["readthedocs.io", "readthedocs.org"],
+    "fingerprints": [
+      "is unknown to Read the Docs",
+      "Project not found"
+    ]
+  },
+  {
+    "name": "Shopify (myshopify)",
+    "cname": ["myshopify.com"],
+    "fingerprints": [
+      "There\u2019s no page at this address",
+      "There\u2019s no page at this address."
+    ]
+  },
+  {
+    "name": "Pantheon",
+    "cname": ["pantheon.io"],
+    "fingerprints": [
+      "404: Page not Found",
+      "The site you are trying to reach is not available"
+    ]
+  },
+  {
+    "name": "Ghost (ghost.io)",
+    "cname": ["ghost.io"],
+    "fingerprints": [
+      "The thing you were looking for is no longer here, or never was."
+    ]
+  },
+  {
+    "name": "Azure Blob Storage (static website)",
+    "cname": ["blob.core.windows.net", "azureedge.net"],
+    "fingerprints": [
+      "The specified container does not exist"
+    ]
+  },
+  {
+    "name": "Azure App Service",
+    "cname": ["azurewebsites.net"],
+    "fingerprints": [
+      "The resource you are looking for has been removed, had its name changed, or is temporarily unavailable."
+    ]
+  },
+  {
+    "name": "GitHub (raw / user content) - generic",
+    "cname": ["githubusercontent.com"],
+    "fingerprints": [
+      "404: Not Found",
+      "There isn't a GitHub Page hosted here, sorry."
+    ]
+  },
+  {
+    "name": "Generic CDN error - catch-all (low false positives if paired with CNAME)",
+    "cname": [],
+    "fingerprints": [
+      "Service Temporarily Unavailable",
+      "No such app",
+      "Page Not Found"
+    ],
+    "note": "Use this entry only when the CNAME matches a known CDN; generic strings otherwise cause false positives."
+  },
+  {
+    "name": "AWS S3 Bucket (redirector)",
+    "cname": ["s3-website-us-east-1.amazonaws.com", "s3-website-us-west-1.amazonaws.com", "s3-website-us-west-2.amazonaws.com", "s3-website-eu-west-1.amazonaws.com", "s3-website-ap-southeast-1.amazonaws.com", "s3-website-ap-northeast-1.amazonaws.com", "s3-website-sa-east-1.amazonaws.com"],
+    "fingerprints": [
+      "The bucket you are attempting to access must be addressed using the specified endpoint",
+      "NoSuchBucket"
+    ],
+    "note": "Specific to S3 redirector buckets to avoid false positives on generic S3 errors"
+  },
+  {
+    "name": "Cloudflare Pages",
+    "cname": ["pages.dev"],
+    "fingerprints": [
+      "The deployment could not be found on Vercel.",
+      "This project on Cloudflare Pages has been suspended."
+    ],
+    "note": "Cloudflare Pages often uses Vercel-like error messages; check CNAME carefully"
+  },
+  {
+    "name": "Firebase Hosting",
+    "cname": ["web.app", "firebaseapp.com"],
+    "fingerprints": [
+      "Site Not Found",
+      "Firebase Hosting Setup Complete"
+    ],
+    "note": "Firebase shows 'Setup Complete' for unclaimed sites; avoid generic 'Site Not Found' without CNAME match"
+  },
+  {
+    "name": "Render",
+    "cname": ["onrender.com"],
+    "fingerprints": [
+      "Not Found",
+      "The page you are looking for doesn't exist."
+    ],
+    "note": "Render uses generic 404 messages; requires CNAME match to avoid false positives"
+  },
+  {
+    "name": "Railway",
+    "cname": ["railway.app"],
+    "fingerprints": [
+      "Application Error",
+      "Not Found"
+    ],
+    "note": "Railway shows 'Application Error' for unclaimed apps; generic 'Not Found' needs CNAME verification"
+  },
+  {
+    "name": "Fly.io",
+    "cname": ["fly.dev"],
+    "fingerprints": [
+      "Fly.io - The app is not responding",
+      "404 Not Found"
+    ],
+    "note": "Fly.io has specific error messages for unresponsive apps"
+  },
+  {
+    "name": "DigitalOcean App Platform",
+    "cname": ["ondigitalocean.app"],
+    "fingerprints": [
+      "404 - Page Not Found",
+      "The app you're looking for doesn't exist."
+    ],
+    "note": "DO App Platform uses standard 404 but with specific messaging"
+  },
+  {
+    "name": "Vercel (alternative)",
+    "cname": ["vercel-preview.app"],
+    "fingerprints": [
+      "This deployment has been archived",
+      "The deployment for this project has been archived"
+    ],
+    "note": "For archived Vercel deployments; complements existing Vercel entry"
+  },
+  {
+    "name": "GitLab (alternative)",
+    "cname": ["gitlab.com"],
+    "fingerprints": [
+      "The repository for this project does not exist",
+      "Project not found"
+    ],
+    "note": "For GitLab.com hosted projects; different from GitLab Pages"
+  }
+]
